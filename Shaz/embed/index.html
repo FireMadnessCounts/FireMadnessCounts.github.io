@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Realtime Live YouTube Subscriber Count Embed</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="fragment" content="!" />
+    <meta name="viewport" content="width=300px, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon.png" />
+    <script type="text/javascript">
+        var isEmbed = 1;
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,600" rel="stylesheet">
+    <link href="style-embed.css" rel="stylesheet">
+    <link href="odometer-theme.css" rel="stylesheet">
+</head>
+<body>
+    <div id="embed" style="cursor:pointer;">
+        <div class="embedImage">
+            <img src="assets/images/icon.png" alt="" height="80px" width="80px" id="yt_profile" />
+        </div>
+        <div class="embedContainer">
+            <div class="embedName emSec">
+                <span id="yt_name">--- ---</span>
+            </div>
+            <div class="embedCounter emSec">
+                <h2 class="count_live" id="yt_subs">00,000,000</h2>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.body.onclick = function () {
+            window.open(YT.urls.getCurrent());
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+    <script src="odometer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
