@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="250x250"
+    href="https://yt3.ggpht.com/h-VkE152hUelhZ4ODFgaeaXzHJBFOGlbakgk2_yax4_8jBsKBBz5o9PnuQZlpGNXDvPIlYMNVw=s176-c-k-c0x00ffffff-no-rj-mo"
+  />
+  <link rel="stylesheet" href="https://mgcounts.com/assets/css/odometer.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
+  <title>MzooCounts Embed Subscriber Count</title>
+  <link rel="stylesheet" href="stye.css">
+
+  <style>
+    @font-face {
+      font-family: Open Sans1;
+      src: url(https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap);
+    }
+    #image {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      object-fit: block;
+
+    }
+
+    #title {
+      position: absolute;
+      top: 0%;
+      left: 80px;
+      font-size: 22px;
+      width: 245px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-family: Open Sans1;
+      color: #4B5F69;
+      margin-left: 20px;
+    }
+
+    #count {
+      position: absolute;
+      margin-top: -70px;
+      left: 80px;
+      font-size: 34px;
+      width: 245px !important;
+      color: #4B5F69;
+      margin-left: 20px;
+      font-family: "roboto", sans-serif;
+
+      #h1 {
+        position: absolute;
+        top: 0%;
+        left: 80px;
+        font-size: 20px;
+        width: 245px;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: "ROBOTO", roboto light;
+        color: #4B5F69;
+      }
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: transparent;
+      font-family: "roboto", sans-serif;
+    }
+  </style>
+</head>
+<br />
+<br />
+<br />
+
+<body>
+  <br />
+  <br />
+  <br />
+
+  <img id="image" class="image" src="" height="88" width="88" />
+  <span id="title"> </span>
+  <span id="description"> </span>
+  <span id="count" class="odometer">0</span>
+</body>
+<script>
+  var params = new URLSearchParams(document.location.search.substring(1));
+  var ID = params.get("id");
+
+  async function getStats() {
+    let request = await fetch(
+      "https://api.amixcounts.ga/api/yt/estimations/user/" + ID + "",
+      { mode: "cors" }
+    );
+    let data = await request.json().catch(() => {});
+    if (!data) return;
+    count.innerHTML = data.subsapi;
+    title.innerHTML = data.name;
+    updateimage(data.image);
+  }
+  setInterval(getStats, 3000);
+  getStats();
+
+  function updateimage(image) {
+    document.querySelector(".image").src = image;
+  }
+</script>
+<div style="color:#4B5F69;">
+</div>
+
+<div style="color :#4B5F69">
+  <div></div>
+</div>
